@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proposta Comercial — Plataforma Quem Foi Quem | Quadrify</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --surface:#ffffff;
+      --border:#e9e7ff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --p50:#f5f3ff;
+      --p100:#ede9fe;
+      --p600:#6d28d9;
+      --p700:#5b21b6;
+      --orange:#ff6a00;
+      --green:#16a34a;
+      --shadow:0 18px 60px rgba(15,23,42,.08);
+      --shadow-soft:0 8px 30px rgba(15,23,42,.06);
+      --r-xl:22px;
+      --r-lg:16px;
+      --container:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background: linear-gradient(180deg,var(--p50),#fff 34%);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--container),calc(100% - 48px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(255,255,255,.74);border-bottom:1px solid rgba(233,231,255,.8)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:240px}
+    .logo{width:38px;height:38px;border-radius:14px;background:radial-gradient(120% 120% at 20% 20%,#a78bfa 0%,#7c3aed 55%,#5b21b6 100%);box-shadow:0 14px 30px rgba(124,58,237,.22);display:grid;place-items:center;overflow:hidden}
+    .logo img{width:26px;height:26px;object-fit:contain}
+    .name{display:flex;flex-direction:column;line-height:1.1}
+    .name strong{font-weight:900;letter-spacing:-.02em}
+    .name span{font-size:12px;color:var(--muted)}
+    .top-actions{display:flex;align-items:center;gap:10px}
+    .btn{border:1px solid var(--border);background:rgba(255,255,255,.9);color:var(--text);padding:10px 14px;border-radius:999px;font-weight:800;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .08s ease,box-shadow .2s ease,background .2s ease;box-shadow:0 8px 18px rgba(15,23,42,.04)}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 12px 22px rgba(15,23,42,.06)}
+    .btn-primary{border:none;background:linear-gradient(90deg,var(--p600),var(--orange));color:white;box-shadow:0 18px 38px rgba(109,40,217,.20)}
+    .btn-wa{border:none;background:linear-gradient(90deg,#16a34a,#22c55e);color:white;box-shadow:0 18px 38px rgba(34,197,94,.18)}
+
+    .hero{padding:34px 0 10px}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start}
+    h1{margin:0;font-size:38px;line-height:1.04;letter-spacing:-.04em}
+    .accent{background:linear-gradient(90deg,#5b21b6,#7c3aed 45%,#ff6a00);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subline{margin-top:10px;font-size:14px;color:var(--muted);font-weight:650;line-height:1.5;max-width:84ch}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;color:var(--muted);font-size:13px;align-items:center}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border);background:rgba(255,255,255,.85);border-radius:999px}
+    .price-card{border-radius:22px;background:linear-gradient(90deg,#5b21b6,#7c3aed 45%,#ff6a00);color:#fff;padding:18px 18px 16px;box-shadow:0 24px 60px rgba(91,33,182,.25);position:relative;overflow:hidden}
+    .price-card:after{content:"";position:absolute;inset:-60px -60px auto auto;width:220px;height:220px;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.35),rgba(255,255,255,0) 58%);transform:rotate(25deg)}
+    .price-card .label{font-weight:900;font-size:12px;opacity:.92;letter-spacing:.02em;text-transform:uppercase}
+    .price-card .value{margin-top:6px;font-size:34px;font-weight:900;letter-spacing:-.04em;line-height:1.08}
+    .price-card .sub{margin-top:8px;font-size:13px;opacity:.95;line-height:1.5}
+    .price-card .sub strong{color:#fff}
+
+    .section{padding:18px 0 0}
+    .card{background:rgba(255,255,255,.92);border:1px solid var(--border);border-radius:22px;box-shadow:0 10px 28px rgba(15,23,42,.05)}
+    main.card.summary{background:transparent;border:0;box-shadow:none;padding:0;border-radius:0}
+    .summary{padding:18px}
+    .summary-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(233,231,255,.7);padding-bottom:14px;margin-bottom:14px}
+    .kicker{font-size:12px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#5b21b6}
+    .desc{font-size:14px;color:var(--muted);line-height:1.55;max-width:78ch}
+    .right{text-align:right;min-width:200px}
+    .big{font-size:28px;font-weight:900;letter-spacing:-.03em;color:#5b21b6}
+    .small{margin-top:2px;font-size:12px;color:var(--muted)}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+    .metric{background:linear-gradient(180deg,rgba(245,243,255,.8),rgba(255,255,255,.92));border:1px solid rgba(233,231,255,.9);border-radius:16px;padding:12px 12px 10px}
+    .metric .num{font-size:20px;font-weight:900;letter-spacing:-.03em;margin:0}
+    .metric .lab{font-size:12px;color:var(--muted);margin-top:2px}
+    .metric .hint{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.35}
+    .h2{margin:30px 0 8px;text-align:center;font-size:26px;letter-spacing:-.03em}
+    .blurb{width:min(860px,100%);margin:0 auto 14px;text-align:center;color:var(--muted);font-size:13px;line-height:1.55}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .box{padding:16px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid var(--border)}
+    .box h3{margin:0;font-size:14px;font-weight:900;letter-spacing:-.01em}
+    .box p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.55}
+    .box ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.55}
+    .box li{margin:6px 0}
+    .phase{position:relative;overflow:hidden}
+    .phase:before{content:"";position:absolute;right:-55px;top:-55px;width:150px;height:150px;border-radius:50%;background:rgba(124,58,237,.08)}
+    .tag{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;padding:6px 10px;border-radius:999px;background:rgba(237,233,254,.8);border:1px solid rgba(233,231,255,.95);font-size:12px;font-weight:900;color:#5b21b6}
+    table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px;border:1px solid rgba(233,231,255,.9);margin-top:12px;margin-bottom:18px}
+    thead th{text-align:left;font-size:12px;color:var(--muted);font-weight:900;padding:12px;background:rgba(245,243,255,.7)}
+    tbody td{padding:12px;font-size:13px;border-top:1px solid rgba(233,231,255,.75);vertical-align:top}
+    .t-right{text-align:right} .t-strong{font-weight:900} .muted{color:var(--muted)}
+    .mini-card{border:1px solid rgba(233,231,255,.95);background:linear-gradient(180deg,rgba(245,243,255,.65),rgba(255,255,255,.92));border-radius:18px;padding:14px;box-shadow:0 10px 26px rgba(15,23,42,.04)}
+    .mini-title{font-weight:900;font-size:14px;letter-spacing:-.01em}
+    .mini-desc{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.55}
+    .warning{border-color:rgba(255,106,0,.28);background:linear-gradient(180deg,rgba(255,247,237,.9),rgba(255,255,255,.96))}
+    .payment-note{margin-top:10px;padding:12px 14px;border-radius:16px;border:1px solid rgba(233,231,255,.9);background:rgba(245,243,255,.65);color:var(--muted);font-size:13px;line-height:1.55}
+    .payment-note strong{color:var(--text);font-weight:900}
+    .cta{margin:22px auto 0;width:min(820px,100%);padding:18px 16px;border-radius:22px;background:rgba(245,243,255,.75);border:1px solid rgba(233,231,255,.9);text-align:center}
+    .cta h3{margin:0;font-size:18px;font-weight:900;letter-spacing:-.02em}
+    .cta p{margin:8px 0 14px;color:var(--muted);font-size:13px;line-height:1.55}
+    .cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .cta-row a{min-width:220px}
+    footer{margin-top:26px;padding:16px 0 36px;color:var(--muted);font-size:12px;text-align:center}
+    .footer-line{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(233,231,255,.9);padding-top:16px}
+    @media(max-width:980px){.hero-grid,.grid-2{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:1fr}h1{font-size:32px}}
+    @media(max-width:560px){.container{width:min(var(--container),calc(100% - 28px))}.metrics{grid-template-columns:1fr}.top-actions{display:none}.summary-head{display:block}.right{text-align:left;margin-top:12px}}
+    @page{margin:12mm}
+    @media print{body{background:#fff!important}.topbar{position:static}.no-print{display:none!important}.card,.box,.mini-card{box-shadow:none!important}}
+     .card,.mini-card,.box,table,.price-card,.cta{break-inside:avoid;page-break-inside:avoid}
+    main.card.summary{break-inside:auto!important;page-break-inside:auto!important;page-break-before:auto!important;margin-top:0!important}
+    main.card.summary .hero{break-inside:auto!important;page-break-inside:auto!important}
+    @media print{main.card.summary{break-inside:auto!important;page-break-inside:auto!important;page-break-before:auto!important;margin-top:0!important}.hero{padding-top:0!important}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="logo" title="Quadrify"><img src="data:image/png;base64,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E+/HuR4BnTxPsnEnhHTibtzeJAAATsLsMJrns4AQ0InGPrFr5IxMAADc59FcAjpZ457YpYcOTtwAAA3UxCXu6Wv6KiAEdBoqneSGAQBA4xwfHyvE0FgCOpmmFAAA1EJDm8R9GRACOn/5PBqmiSduAADc59FsAjqNdHh46MQNANBA3W7XfR6NJaADAABAAQR0sibuefFkFQCggf78888mdnHvB4SATkMNh0MBHQCggdzn0WQCOgAAABRAQAcAAIACCOgAAABQAAEdAAAACiCgAwAAQAEEdAAAACiAgA4AAAAFENABAACgAAI6AAAAFEBABwAAgAII6AAAAFAAAR0AAAAKIKADAABAAQR0AAAAKICADgAAAAUQ0AEAAKAAAjoAAAAUQEAHAACAAgjoAAAAUAABHQAAAAogoAMAAEABBHQAAAAogIAOAAAABRDQAQAAoAACOgAAABRAQAcAAIACCOgAAABQAAEdAAAACiCgAwAAQAEEdAAAACiAgA4AAAAFENABAACgAAI6AAAAFEBABwAAgAII6AAAAFAAAR0AAAAKIKADAABAAQR0AAAAKICADgAAAAUQ0AEAAKAAAjoAAAAUQEAHAACAAgjoAAAAUAABHQAAAAogoAMAAEABBHQAAAAogIAOAAAABRDQAQAAoAACOgAAABRAQAcAAIACCOgAAABQAAEdAAAACiCgAwAAQAEEdAAAACiAgA4AAAAFENABAACgAAI6AAAAFEBABwAAgAII6AAAAFAAAR0AAAAKIKADAABAAQR0AAAAKICADgAAAAUQ0AEAAKAAAjoAAAAUQEAHAACAAgjoAAAAUAABHQAAAAogoAMAAEABBHQAAAAogIAOAAAABRDQAQAAoAACOgAAABRAQAcAAIACCOgAAABQAAEdAAAACiCgAwAAQAEEdAAAACiAgA4AAAAFENABAACgAAI6AAAAFEBABwAAgAII6AAAAFAAAR0AAAAKIKADAABAAQR0AAAAKICADgAAAAUQ0AEAAKAAAjoAAAAUQEAHAACAAgjoAAAAUAABHQAAAAogoAMAAEABBHQAAAAogIAOAAAABRDQAQAAoAACOgAAABRAQAcAAIACCOgAAABQAAEdAAAACiCgAwAAQAEEdAAAACiAgA4AAAAFENABAACgAAI6AAAAFEBABwAAgAII6AAAAFAAAR0AAAAKIKADAABAAQR0AAAAKICADgAAAAUQ0AEAAKAAAjoAAAAUQEAHAACAAgjoAAAAUAABHQAAAAogoAMAAEABBHQAAAAogIAOAAAABRDQAQAAoAACOgAAABRAQAcAAIACCOgAAABQAAEdAAAACiCgAwAAQAEEdAAAACiAgA4AAAAFENABAACgAAI6AAAAFEBABwAAgAII6AAAAFAAAR0AAAAKIKADAABAAQR0AAAAKICADgAAAAUQ0AEAAKAAAjoAAAAUQEAHAACAAgjoAAAAUAABHQAAAAogoAMAAEABBHQAAAAogIAOAAAABRDQAQAAoAACOgAAABRAQAcAAIACCOgAAABQAAEdAAAACiCgAwAAQAEEdAAAACiAgA4AAAAFENABAACgAAI6AAAAFEBABwAAgAII6AAAAFAAAR0AAAAKIKADAABAAQR0AAAAKICADgAAAAUQ0AEAAKAAAjoAAAAUQEAHAACAAgjoAAAAUAABHQAAAAogoAMAAEABBHQAAAAogIAOAAAABRDQAQAAoAACOgAAABRAQAcAAIACCOgAAABQAAEdAAAACiCgAwAAQAEEdAAAACiAgA4AAAAFENABAACgAAI6AAAAFEBABwAAgAII6AAAAFAAAR0AAAAKIKADAABAAQR0AAAAKICADgAAAAUQ0AEAAKAAAjoAAAAUQEAHAACAAgjoAAAAUAABHQAAAGLxBHQAAAAogIAOAAAABRDQAQAAoAACOgAAABRAQAcAAIACCOgAAABQAAEdAAAACiCgAwAAQAEEdAAAACiAgA4AAAAFENABAACgAAI6AAAAFEBABwAAgAII6AAAAFAAAR0AAAAKIKADAABAAQR0AAAAKICADgAAAAUQ0AEAAKAAAjoAAAAUQEAHAACAAgjoAAAAUAABHQAAAAogoAMAAEABBHQAAAAogIAOAAAABRDQAQAAoAACOgAAABRAQAcAAIACCOgAAABQAAEdAAAACiCgAwAAQAEEdAAAACiAgA4AAAAFENABAACgAAI6AAAAFEBABwAAgAII6AAAAFCAXgAAANTI3t5eJ6CBVNABAACgAAI6AAAAFEBABwAAgAII6AAAAFAAAR0AAAAKIKADAABAAQR0AAAAKICADgAAAAUQ0AEAAKAAAjoAAAAUQEAHAACAAgjoAAAAUAABHQAAAAogoAMAAEABBHQAAAAogIAOAAAABRDQAQAA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" alt="Logo Quadrify" onerror="this.style.display='none';" /></div>
+          <div class="name"><strong>Quadrify</strong><span>Pesquisa e Inteligência</span></div>
+        </div>
+        <div class="top-actions">
+          <a class="btn" href="#escopo">Escopo</a>
+          <a class="btn" href="#cronograma">Cronograma</a>
+          <a class="btn btn-primary no-print" href="#" onclick="downloadPDF(); return false;">Baixar PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="proposal" class="card summary">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Proposta Comercial<br><span class="accent">Plataforma Quem Foi Quem</span></h1>
+          <p class="subline">Implantação de uma plataforma pública de análise legislativa, combinando consulta cidadã, visualização de dados, navegação por ODS, comparação entre atores políticos, seção editorial e autonomia de atualização por CMS.</p>
+          <div class="meta">
+            <span class="pill">Plataforma pública interativa</span>
+            <span class="pill">Comparação entre partidos e estados</span>
+            <span class="pill">Navegação por ODS</span>
+            <span class="pill">Gestão editorial por CMS</span>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="label">Investimento total</div>
+          <div class="value">R$ 30.000</div>
+          <div class="sub">Projeto dividido em <strong>duas fases</strong>, com pagamento em <strong>4 parcelas</strong> vinculadas aos principais marcos de entrega.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card summary">
+          <div class="summary-head">
+            <div>
+              <div class="kicker">Síntese Executiva</div>
+              <div class="desc">A proposta contempla a reconstrução e expansão do Quem Foi Quem como produto digital institucional: uma plataforma navegável para consulta de parlamentares, partidos, estados, votações, critérios metodológicos e dimensões ODS, com camada comparativa e área editorial gerenciável.</div>
+            </div>
+            <div class="right"><div class="big">14 semanas</div><div class="small">Prazo total estimado, condicionado à entrega dos dados pelo cliente</div></div>
+          </div>
+          <div class="metrics">
+            <div class="metric"><p class="num">8 semanas</p><div class="lab">Fase 1</div><div class="hint">Plataforma pública funcional e interativa.</div></div>
+            <div class="metric"><p class="num">6 semanas</p><div class="lab">Fase 2</div><div class="hint">CMS, autonomia editorial e automações.</div></div>
+            <div class="metric"><p class="num">17 ODS</p><div class="lab">Dimensões</div><div class="hint">Pontuação por lei, parlamentar e partido.</div></div>
+            <div class="metric"><p class="num">4x</p><div class="lab">Pagamento</div><div class="hint">Parcelas vinculadas a marcos do projeto.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="escopo">
+      <div class="container">
+        <h2 class="h2">Estrutura da Entrega</h2>
+        <p class="blurb">A entrega foi organizada para separar a implantação pública da plataforma da camada de autonomia operacional e editorial.</p>
+        <div class="grid-2">
+          <div class="box phase">
+            <span class="tag">Fase 1 • Produto mínimo viável</span>
+            <h3>Plataforma pública funcional — até 8 semanas</h3>
+            <ul>
+              <li>Adaptação da experiência pública do site atual e incorporação do que já foi desenvolvido na demo.</li>
+              <li>Listagem de parlamentares com filtros por estado, partido, cargo e situação do mandato.</li>
+              <li>Página individual de parlamentar com pontuação, votações e leitura por dimensão.</li>
+              <li>Análise agregada por partido e por estado.</li>
+              <li>Hub de votações com descrição de cada lei e explicação de sua importância.</li>
+              <li>Página de critérios metodológicos e página de apoiadores.</li>
+              <li>Classificação das leis nas 17 dimensões ODS conforme dados fornecidos pelo cliente.</li>
+              <li>Pontuação de parlamentares e partidos por ODS.</li>
+              <li>Aumento da interatividade da plataforma, com painel comparativo client-side para o usuário cruzar partidos, estados, cargos e dimensões ODS diretamente no navegador.</li>
+            </ul>
+          </div>
+          <div class="box phase">
+            <span class="tag">Fase 2 • Entregabilidade e autonomia</span>
+            <h3>CMS, editorial e automações — até 6 semanas após Fase 1</h3>
+            <ul>
+              <li>Configuração completa do Decap CMS ou plataforma semelhante de gestão de conteúdo.</li>
+              <li>Interface administrativa para adicionar novas votações e atualizar pontuações.</li>
+              <li>Edição de descrições de leis, critérios metodológicos e apoiadores.</li>
+              <li>Seção editorial para artigos, análises, notas técnicas e estudos especiais.</li>
+              <li>Documentação escrita para uso do CMS sem necessidade de edição direta de código.</li>
+              <li>Sincronização automática semanal de dados cadastrais básicos de parlamentares via GitHub Actions.</li>
+              <li>Estrutura para atualização institucional sem dependência contínua da Quadrify.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="h2">Camadas Funcionais</h2>
+        <p class="blurb">O projeto combina consulta, análise comparativa, navegação temática e gestão de conteúdo em uma experiência digital leve, estável e fácil de atualizar.</p>
+        <div class="grid-3">
+          <div class="mini-card"><div class="mini-title">Núcleo da Plataforma</div><div class="mini-desc">Parlamentares, partidos, estados, votações, critérios, apoiadores, estatísticas, páginas individuais e pontuações gerais.</div></div>
+          <div class="mini-card"><div class="mini-title">Camada Interativa</div><div class="mini-desc">Filtros combinados, tabelas ordenáveis, rankings, comparação entre partidos, estados, cargos e dimensões ODS.</div></div>
+          <div class="mini-card"><div class="mini-title">Editorial e Autonomia</div><div class="mini-desc">Publicação de artigos, análises e textos institucionais por CMS, além de documentação de uso e automações semanais.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="h2">Arquitetura Técnica</h2>
+        <p class="blurb">O modelo adotado privilegia leveza, estabilidade, autonomia de publicação e baixo custo operacional, mantendo a experiência pública interativa no lado do usuário.</p>
+        <div class="grid-2" style="grid-template-columns:minmax(0, 760px); justify-content:center;">
+          <div class="box"><h3>Modelo adotado</h3><ul><li>Site estático com componentes interativos em JavaScript.</li><li>Dados estruturados em arquivos JSON, CSV ou Markdown/YAML.</li><li>Processamento de filtros, rankings e comparações no navegador do usuário, em modelo client-side.</li><li>Publicação possível em GitHub Pages ou hospedagem estática equivalente, com baixo custo recorrente.</li><li>CMS Git-based ou solução semelhante para gestão de conteúdo, atualização institucional e seção editorial.</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cronograma">
+      <div class="container">
+        <h2 class="h2">Cronograma e Condições</h2>
+        <table>
+          <thead><tr><th>Etapa</th><th>Prazo estimado</th><th>Condição principal</th></tr></thead>
+          <tbody>
+            <tr><td class="t-strong">Kickoff e organização dos insumos</td><td>Semana 1</td><td>Alinhamento técnico, metodologia, formato dos dados e prioridades visuais.</td></tr>
+            <tr><td class="t-strong">Fase 1 — Plataforma pública funcional</td><td>Até 8 semanas da assinatura</td><td>Condicionada à entrega dos dados ODS, votações, critérios e descrições em formato estruturado até 2 semanas após assinatura.</td></tr>
+            <tr><td class="t-strong">Validação da Fase 1</td><td>Após entrega do MVP</td><td>Aprovação do cliente sobre navegação, estrutura pública, filtros, páginas e comparações.</td></tr>
+            <tr><td class="t-strong">Fase 2 — CMS, editorial e automações</td><td>Até 6 semanas após aprovação da Fase 1</td><td>Configuração de CMS, documentação, seção editorial e rotinas automáticas de atualização cadastral.</td></tr>
+          </tbody>
+        </table>
+        <div class="payment-note"><strong>Condição crítica:</strong> caso a entrega dos dados pelo cliente atrase, o cronograma será deslocado proporcionalmente. Essa condição deve constar expressamente no contrato.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="h2">Investimento e Pagamento</h2>
+        <div class="card summary">
+          <div class="summary-head">
+            <div><div class="kicker">Valor total do projeto</div><div class="desc">Implantação da plataforma pública, camada interativa, estrutura editorial, CMS, documentação e automações descritas nesta proposta.</div></div>
+            <div class="right"><div class="big">R$ 30.000</div><div class="small">Pagamento em 4 parcelas</div></div>
+          </div>
+          <table>
+            <thead><tr><th>Parcela</th><th>Marco</th><th class="t-right">Valor</th></tr></thead>
+            <tbody>
+              <tr><td class="t-strong">1ª parcela</td><td>Assinatura do contrato e kickoff do projeto</td><td class="t-right t-strong">R$ 9.000</td></tr>
+              <tr><td class="t-strong">2ª parcela</td><td>Marco intermediário da Fase 1, com estrutura pública e dados principais em desenvolvimento</td><td class="t-right t-strong">R$ 8.000</td></tr>
+              <tr><td class="t-strong">3ª parcela</td><td>Aprovação da Fase 1 — plataforma pública funcional</td><td class="t-right t-strong">R$ 8.000</td></tr>
+              <tr><td class="t-strong">4ª parcela</td><td>Entrega final da Fase 2 — CMS, documentação, editorial e automações</td><td class="t-right t-strong">R$ 5.000</td></tr>
+            </tbody>
+          </table>
+          <div class="payment-note"><strong>Observação comercial:</strong> o modelo em quatro parcelas preserva previsibilidade financeira para o projeto e vincula os pagamentos aos principais marcos de execução e aprovação.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="h2">Cláusulas de Escopo e Responsabilidade</h2>
+        <div class="grid-2">
+          <div class="box"><h3>Dados e metodologia</h3><p>A responsabilidade pela validade política, metodológica e substantiva dos critérios, pesos, classificações ODS e interpretação das votações será do contratante. A Quadrify será responsável pela estruturação técnica, visual, funcional e operacional da plataforma conforme os dados fornecidos.</p></div>
+          <div class="box"><h3>Manutenção após entrega</h3><p>A entrega contempla o produto finalizado, configurado e documentado. A Quadrify não permanecerá como mantenedora contínua do site após a entrega. Atualizações, novas funcionalidades, suporte recorrente ou alterações de escopo serão objeto de contratação separada.</p></div>
+          <div class="box"><h3>APIs e fontes externas</h3><p>A sincronização automática dependerá da disponibilidade e estabilidade das fontes públicas utilizadas. Mudanças estruturais nas APIs oficiais poderão exigir ajustes técnicos adicionais.</p></div>
+          <div class="box"><h3>Editorial</h3><p>A seção editorial contempla estrutura, templates e CMS para publicação. A produção recorrente dos textos, curadoria política e atualização editorial contínua não estão incluídas, salvo contratação específica.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <h3>Resultado esperado</h3>
+          <p>Ao final do projeto, o Quem Foi Quem passa a operar como uma plataforma pública de referência para leitura legislativa, com dados navegáveis, metodologia transparente, comparação entre atores políticos, navegação por ODS e autonomia institucional para atualização de conteúdo.</p>
+          <div class="cta-row no-print"><a class="btn btn-primary" href="#" onclick="downloadPDF(); return false;">Baixar proposta em PDF</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <div>© 2026 Quadrify Pesquisa e Inteligência</div>
+      <div>Proposta Comercial — Plataforma Quem Foi Quem</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadPDF(){
+      try{
+        const source = document.querySelector("#proposal");
+        const element = source.cloneNode(true);
+        const filename = "proposta_quadrify_quem_foi_quem.pdf";
+
+        // Evita a página inicial em branco: o elemento principal não pode ser tratado
+        // como um bloco indivisível pelo html2pdf.
+        element.style.breakInside = "auto";
+        element.style.pageBreakInside = "auto";
+        element.style.pageBreakBefore = "auto";
+        element.style.marginTop = "0";
+        element.querySelectorAll(".no-print").forEach(el => el.remove());
+
+        const opt = {
+          margin:       0.48,
+          filename:     filename,
+          image:        { type: "jpeg", quality: 0.98 },
+          html2canvas:  {
+            scale: 2,
+            useCORS: true,
+            backgroundColor: "#ffffff",
+            logging: false,
+            scrollY: 0
+          },
+          jsPDF:        { unit: "in", format: "a4", orientation: "portrait" },
+          pagebreak:    { mode: ["css", "legacy"], avoid: [".box", ".mini-card", ".price-card", "table"] }
+        };
+
+        html2pdf().set(opt).from(element).save();
+      } catch(e){
+        console.error(e);
+        alert("Falha ao gerar PDF. Veja o console para detalhes.");
+      }
+    }
+  </script>
+</body>
+</html>
